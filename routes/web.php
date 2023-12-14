@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Display products for a specific category
+Route::get('/category/{slug}', [CategoryController::class, 'showByCategory'])
+    ->name('category.show');
+
+Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+
 
 Route::get('/', function () {
     return view('welcome');

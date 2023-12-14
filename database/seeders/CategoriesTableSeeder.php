@@ -3,19 +3,20 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class CategoriesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        Category::create(['name' => 'Coffee']);
-        Category::create(['name' => 'Non Coffee']);
-        Category::create(['name' => 'Snacks']);
-        Category::create(['name' => 'Main Course']);
+        $categories = ['Coffee', 'Non Coffee', 'Snacks', 'Main Course'];
+
+        foreach ($categories as $category) {
+            Category::create([
+                'name' => $category,
+                'slug' => Str::slug($category),
+            ]);
+        }
     }
 }
