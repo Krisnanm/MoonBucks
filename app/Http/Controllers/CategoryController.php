@@ -26,6 +26,8 @@ class CategoryController extends Controller
 
         $products = $products->get();
 
-        return view('category.show', compact('category', 'products', 'categorySlug'));
+        return view('show', compact('category', 'products', 'categorySlug'));
     }
+
+    
 }

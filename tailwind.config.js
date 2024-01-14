@@ -12,8 +12,16 @@ export default {
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins'],
+        'gurajada': ['Gurajada', 'sans-serif',],
+        'display': ['Trade Winds'],
+    },
+    backgroundImage: {
+      'my-image': 'url("background.png")',
   },
+},
   plugins: [],
 }
-
+}
